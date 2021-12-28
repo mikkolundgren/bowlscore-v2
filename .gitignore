@@ -11,6 +11,7 @@
 
 # secret stuff
 **/secret/
+lib/firebase_options.dart
 
 # IntelliJ related
 *.iml
