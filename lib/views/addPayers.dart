@@ -14,7 +14,7 @@ class PayersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: BowlBar(
         title: "Payers",
       ),
@@ -30,7 +30,7 @@ class AddPayerForm extends StatefulWidget {
 }
 
 class _AddPayerState extends State<AddPayerForm> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
   final _addPayerFormKey = GlobalKey<FormState>();
   String _currentBowler = 'Aku';
@@ -58,7 +58,7 @@ class _AddPayerState extends State<AddPayerForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: BowlBar(title: "Add payer"),
+      appBar: const BowlBar(title: "Add payer"),
       body: Container(
         padding: const EdgeInsets.all(40.0),
         child: _addPayerForm(context),
@@ -93,7 +93,7 @@ class _AddPayerState extends State<AddPayerForm> {
               const Padding(
                 padding: EdgeInsets.only(top: 30.0),
               ),
-              ImageRowWidget(),
+              const ImageRowWidget(),
               const Padding(
                 padding: EdgeInsets.only(top: 30.0),
               ),

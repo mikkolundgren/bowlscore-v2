@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 class BowlBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-  BowlBar({required this.title});
+  // ignore: use_key_in_widget_constructors
+  const BowlBar({required this.title});
 
+  @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(this.title),
+      title: Text(title),
       elevation: .1,
-      backgroundColor: Color.fromRGBO(49, 87, 110, 1.0),
+      backgroundColor: const Color.fromRGBO(49, 87, 110, 1.0),
     );
   }
 
   @override
-  Size get preferredSize => new Size.fromHeight(50.0);
+  Size get preferredSize => const Size.fromHeight(50.0);
 }

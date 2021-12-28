@@ -18,7 +18,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BowlBar(
+      appBar: const BowlBar(
         title: "Bowlscore",
       ),
       body: Container(
@@ -83,19 +83,19 @@ class _DashboardState extends State<Dashboard> {
         builder: (context) {
           switch (action) {
             case "showPayers":
-              return ListPayers();
+              return const ListPayers();
             case "addPayer":
-              return AddPayerForm();
+              return const AddPayerForm();
             case "addScore":
-              return AddScoreForm();
+              return const AddScoreForm();
             case "scores":
               return const FBListScores();
             case "league":
-              return LeaguePage();
+              return const LeaguePage();
             case "charts":
-              return ChartPage();
+              return const ChartPage();
             default:
-              return PayersPage();
+              return const PayersPage();
           }
         },
       ),

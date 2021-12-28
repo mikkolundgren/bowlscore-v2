@@ -16,7 +16,7 @@ class _FBListScoresState extends State<FBListScores> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BowlBar(title: "Scores"),
+      appBar: const BowlBar(title: "Scores"),
       body: Container(
         padding: const EdgeInsets.all(40.0),
         child: _scores(),
@@ -33,7 +33,7 @@ class _FBListScoresState extends State<FBListScores> {
         }
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           default:
             return ListView(
               children: snapshot.data!.docs.map((DocumentSnapshot document) {
@@ -46,14 +46,12 @@ class _FBListScoresState extends State<FBListScores> {
   }
 
   Widget _heading(DocumentSnapshot document) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Text(document['date']),
-          Text(document['serie'].toString()),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Text(document['date']),
+        Text(document['serie'].toString()),
+      ],
     );
   }
 

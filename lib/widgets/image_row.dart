@@ -3,7 +3,10 @@ import '../model/app_model.dart';
 import '../services/service_locator.dart';
 
 class ImageRowWidget extends StatefulWidget {
+  const ImageRowWidget({Key? key}) : super(key: key);
 
+
+  @override
   _ImageRowWidgetState createState() => _ImageRowWidgetState();
 }
 
@@ -69,7 +72,7 @@ class _ImageRowWidgetState extends State<ImageRowWidget> {
     );
   }
 
-  int _imagePressed = 0;
+  final int _imagePressed = 0;
 
   int get imagePressed => _imagePressed;
 }

@@ -1,11 +1,13 @@
 import '../services/league_calculator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import '../widgets/bowlbar.dart';
 import '../domain/league.dart';
 
 class LeaguePage extends StatefulWidget {
+  const LeaguePage({Key? key}) : super(key: key);
 
+
+  @override
   _LeaguePageState createState() => _LeaguePageState();
 }
 
@@ -18,14 +20,12 @@ class _LeaguePageState extends State<LeaguePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BowlBar(title: "League"),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Text("Hall of Shame"),
-            _leagueFuture(),
-          ],
-        ),
+      appBar: const BowlBar(title: "League"),
+      body: Column(
+        children: <Widget>[
+          const Text("Hall of Shame"),
+          _leagueFuture(),
+        ],
       ),
     );
   }
@@ -47,17 +47,15 @@ class _LeaguePageState extends State<LeaguePage> {
   }
 
   Widget _progress() {
-    return Container(
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
+    return const Center(
+      child: CircularProgressIndicator(),
     );
   }
 
   Widget _headingText(String text) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 15.0,
         fontWeight: FontWeight.bold,
       ),
@@ -67,7 +65,7 @@ class _LeaguePageState extends State<LeaguePage> {
   Widget _text(String text) {
     return Text(
       text,
-      style: TextStyle(fontSize: 20.0),
+      style: const TextStyle(fontSize: 20.0),
     );
   }
 
@@ -78,7 +76,7 @@ class _LeaguePageState extends State<LeaguePage> {
         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
         children: <TableRow>[
           TableRow(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color.fromRGBO(245, 243, 237, 1),
             ),
             children: <Widget>[

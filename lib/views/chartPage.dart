@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import '../services/chart_data.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -5,6 +7,9 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import '../widgets/bowlbar.dart';
 
 class ChartPage extends StatefulWidget {
+  const ChartPage({Key? key}) : super(key: key);
+
+  @override
   _ChartPageState createState() => _ChartPageState();
 }
 
@@ -12,9 +17,9 @@ class _ChartPageState extends State<ChartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BowlBar(title: "Averages"),
+      appBar: const BowlBar(title: "Averages"),
       body: Container(
-        padding: EdgeInsets.all(40.0),
+        padding: const EdgeInsets.all(40.0),
         child: Container(
           child: _buildChart(),
         ),
@@ -30,12 +35,12 @@ class _ChartPageState extends State<ChartPage> {
             case ConnectionState.none:
             case ConnectionState.active:
             case ConnectionState.waiting:
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
 
             case ConnectionState.done:
-              return Center();
+              return const Center();
             /*  
               return charts.TimeSeriesChart(
                 null,

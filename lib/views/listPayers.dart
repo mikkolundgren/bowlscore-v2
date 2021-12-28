@@ -32,7 +32,7 @@ class _ListPayersState extends State<ListPayers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BowlBar(
+      appBar: const BowlBar(
         title: "Payers",
       ),
       body: Column(

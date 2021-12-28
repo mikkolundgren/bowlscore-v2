@@ -1,3 +1,6 @@
+// ignore_for_file: file_names
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../widgets/bowlbar.dart';
 import '../services/backend.dart';
@@ -6,6 +9,8 @@ import '../services/service_locator.dart';
 import '../model/app_model.dart';
 
 class ListScores extends StatefulWidget {
+  const ListScores({Key? key}) : super(key: key);
+
   @override
   _ListScoresState createState() => _ListScoresState();
 }
@@ -20,27 +25,29 @@ class _ListScoresState extends State<ListScores> {
   }
 
   update() {
-    if (!this.mounted) {
+    if (!mounted) {
       return;
     }
     setState(() {
       _currentBowler = locator<AppModel>().bowler;
-      print('currentBowler $_currentBowler');
+      if (kDebugMode) {
+        print('currentBowler $_currentBowler');
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BowlBar(title: "Scores"),
+      appBar: const BowlBar(title: "Scores"),
       body: Container(
-        padding: EdgeInsets.all(40.0),
+        padding: const EdgeInsets.all(40.0),
         child: Column(
           children: <Widget>[
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(top: 40.0),
             ),
-            ImageRowWidget(),
+            const ImageRowWidget(),
             _scoreListFuture(),
           ],
         ),
@@ -53,7 +60,7 @@ class _ListScoresState extends State<ListScores> {
         future: listScores(_currentBowler),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
           return scoreList(snapshot.data);
         });
@@ -62,7 +69,7 @@ class _ListScoresState extends State<ListScores> {
   Widget scoreList(data) {
     return Expanded(
       child: ListView.builder(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         itemCount: data.length,
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
