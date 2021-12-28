@@ -2,18 +2,19 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import '../secret/creds.dart' as secret;
 
 const String host = "http://localhost:8080";
 
 final headers = {
   "Content-Type": "application/json",
-  "Authorization": "Basic bW9lOm1vZW1vZQ=="
+  "Authorization": secret.authHeader,
 };
 
 Map<String, String> _headers() {
   var headers = <String, String>{};
   headers.putIfAbsent("Content-Type", () => "application/json");
-  headers.putIfAbsent("Authorization", () => "Basic bW9lOm1vZW1vZQ==");
+  headers.putIfAbsent("Authorization", () => secret.authHeader);
   return headers;
 }
 
