@@ -191,7 +191,7 @@ class _AddScoreState extends State<AddScoreForm> {
   }
 
   void showMessage(String message, [MaterialColor color = Colors.green]) {
-    _scaffoldKey.currentState!.showSnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(backgroundColor: color, content: Text(message)));
   }
 

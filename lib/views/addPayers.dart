@@ -30,7 +30,8 @@ class AddPayerForm extends StatefulWidget {
 }
 
 class _AddPayerState extends State<AddPayerForm> {
-  final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+  final GlobalKey<ScaffoldMessengerState> _scaffoldKey =
+      GlobalKey<ScaffoldMessengerState>();
 
   final _addPayerFormKey = GlobalKey<FormState>();
   String _currentBowler = 'Aku';
@@ -122,7 +123,7 @@ class _AddPayerState extends State<AddPayerForm> {
   }
 
   void _showMessage(String message, [MaterialColor color = Colors.green]) {
-    _scaffoldKey.currentState!.showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       backgroundColor: color,
       content: Text(message),
     ));
